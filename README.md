@@ -35,7 +35,7 @@ F --> G[Model Deployment with Streamlit]
 | **Language** | Python 3.x |
 | **Data Handling** | Pandas, NumPy |
 | **Visualization** | Matplotlib, Seaborn, Plotly |
-| **Preprocessing** | Scikit-learn, Imbalanced-learn |
+| **Preprocessing** | Scikit-learn|
 | **Modeling** | Linear Regression, Decision Tree, Random Forest, XGBoost, MLPRegressor |
 | **Deployment** | Streamlit |
 | **Others** | Joblib, Pipeline, ColumnTransformer |
@@ -48,27 +48,18 @@ F --> G[Model Deployment with Streamlit]
 AQI_Prediction/
 │
 ├── data/
-│   ├── raw_data.csv
-│   ├── processed_data.csv
+│   ├── AQI.csv
 │
-├── notebooks/
-│   ├── 01_EDA.ipynb
-│   ├── 02_Model_Training.ipynb
+├── ipynb/
+│   ├── AQI_Prediction.ipynb
 │
 ├── ML_Model/
 │   ├── aqi_prediction.pkl
 │
-├── src/
-│   ├── data_preprocessing.py
-│   ├── model_pipeline.py
-│   ├── evaluation.py
-│
-├── app/
-│   ├── streamlit_app.py
+├── app.py
 │
 ├── requirements.txt
-├── README.md
-└── LICENSE
+└── README.md
 ```
 
 ---
@@ -106,12 +97,12 @@ model = Pipeline(steps=[
 - Nitrogen-based pollutants (NO, NO₂, NOₓ) show strong correlation, indicating vehicular emissions as a major source.
 - Ensemble methods (Random Forest, XGBoost) outperform linear models with higher R² and lower RMSE.
 
-| Model | R² Score | RMSE |
-|--------|-----------|------|
-| Linear Regression | 0.68 | 45.2 |
-| Decision Tree | 0.81 | 28.4 |
-| Random Forest | **0.88** | **21.3** |
-| XGBoost | **0.90** | **19.6** |
+| Model | R² Score | 
+|--------|-----------|
+| Linear Regression | 0.87 |
+| Decision Tree | 0.82 |
+| Random Forest | **0.88** |
+| XGBoost | **0.90** |
 
 ---
 
@@ -143,13 +134,5 @@ streamlit run app/streamlit_app.py
    ```bash
    streamlit run app/streamlit_app.py
    ```
-
----
-
-## 📈 Future Improvements
-- Integrate **LSTM / RNN** models for time-series forecasting.
-- Include **geographical features** for spatial AQI predictions.
-- Automate data ingestion via APIs.
-- Deploy using **Docker + CI/CD** pipeline for production.
 
 ---
